@@ -8,18 +8,21 @@
 # - download is for downloading files uploaded in the db (does streaming)
 # -------------------------------------------------------------------------
 
-
+from gluon.contrib.user_agent_parser import mobilize
+@mobilize
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-
-    if you need a simple wiki simply replace the two lines below with:
-    return auth.wiki()
-    """
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!'))
-
+    from gluon.tools import geocode
+    latitude = longtitude = ''
+    form=SQLFORM.factory(Field('search'), _class='form-search')
+    form.custom.widget.search['_class'] = 'input-long search-query'
+    form.custom.submit['_value'] = 'Search'
+    form.custom.submit['_class'] = 'btn'
+    if form.accepts(request):
+        address=form.vars.search
+        (latitude, longitude) = geocode(address)
+    else:
+        (latitude, longitude) = ('','')
+    return dict(form=form, latitude=latitude, longitude=longitude)
 
 def user():
     """
@@ -38,6 +41,10 @@ def user():
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
     """
     return dict(form=auth())
+
+def Events_Around_you():
+    things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL, db.sponsor.host_reward, db.sponsor.part_reward, db.sponsor.name)
+    return locals()
 
 def aevent():
     things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL, db.sponsor.host_reward, db.sponsor.part_reward, db.sponsor.name)

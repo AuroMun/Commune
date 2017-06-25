@@ -40,7 +40,7 @@ def user():
     return dict(form=auth())
 
 def aevent():
-    things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL)
+    things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL, db.sponsor.host_reward, db.sponsor.part_reward, db.sponsor.name)
     return response.json(things)
 
 @cache.action()

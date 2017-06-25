@@ -27,3 +27,15 @@
 [2017-06-24 18:13:32] EDIT Commune/controllers/default.py: 0
 [2017-06-24 18:14:41] EDIT Commune/controllers/default.py: 0
 [2017-06-24 18:17:57] EDIT Commune/models/db.py: 0
+[2017-06-24 14:08:17] CREATE Events_Around_you.html: 0
+[2017-06-24 14:16:22] EDIT Commune/controllers/default.py: 3
+[2017-06-24 14:19:53] EDIT Commune/models/menu.py: 0
+[2017-06-24 14:20:22] EDIT Commune/models/menu.py: 0
+[2017-06-24 14:20:55] EDIT Commune/models/menu.py: 1
+[2017-06-24 14:21:38] EDIT Commune/models/menu.py: 0
+[2017-06-24 14:21:39] EDIT Commune/models/menu.py: 0
+[2017-06-24 14:28:00] EDIT Commune/views/default/index.html: 27
+[2017-06-24 14:28:00] EDIT Commune/views/default/index.html: 0
+[2017-06-24 14:28:03] EDIT Commune/views/default/index.html: 0
+[2017-06-24 14:28:50] EDIT Commune/views/default/index.html: 1
+[2017-06-24 14:45:59] EDIT Commune/views/default/index.html: -20
