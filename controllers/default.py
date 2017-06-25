@@ -24,6 +24,14 @@ def index():
     return dict(form=form, latitude=latitude, longitude=longitude)
 
 def createEvent():
+    if form.vars:
+        if form.vars.search:
+            address=form.vars.search
+            (latitude, longitude) = geocode(address)
+        else:
+            (latitude, longitude) = (0,0)
+        form.vars.lat = latitude
+        form.vars.lng = longitude
     form = crud.create(db.aevent)
     return locals()
 

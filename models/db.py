@@ -143,7 +143,10 @@ db.define_table('aevent',
                 Field('sponsor', 'reference sponsor', readable = False),
                 Field('adate', 'date', label = 'Date'),
                 Field('atype', 'string', label = 'Type'),
-                Field('description', 'string'), label = 'Description')
+                Field('description', 'string', label = 'Description'),
+                Field('lat','double', writable = False),
+                Field('lng','double', writable = False))
+
 db.define_table('user_event',
                 Field('auser', 'reference auser'),
                 Field('aevent', 'reference aevent'),
