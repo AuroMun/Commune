@@ -81,7 +81,8 @@ response.form_label_separator = myconf.get('forms.separator') or ''
 # -------------------------------------------------------------------------
 
 from gluon.tools import Auth, Service, PluginManager
-
+from gluon.tools import Crud
+crud = Crud(db)
 # host names must be a list of allowed host names (glob syntax allowed)
 auth = Auth(db, host_names=myconf.get('host.names'))
 service = Service()
@@ -126,7 +127,7 @@ auth.settings.reset_password_requires_verification = True
 # >>> for row in rows: print row.id, row.myfield
 # -------------------------------------------------------------------------
 db.define_table('sponsor',
-                Field('name', 'string'), 
+                Field('name', 'string'),
                 Field('host_reward', 'string'),
                 Field('part_reward', 'string'),
                 Field('from_date', 'date'),

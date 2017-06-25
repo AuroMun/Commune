@@ -24,6 +24,10 @@ def index():
         (latitude, longitude) = ('','')
     return dict(form=form, latitude=latitude, longitude=longitude)
 
+def createEvent():
+    form = crud.create(db.aevent)
+    return locals()
+
 def user():
     """
     exposes:
