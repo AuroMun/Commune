@@ -11,6 +11,8 @@
 $(document).ready(function(){
   map = new GMaps({
     div: '#map',
+      lat: 0,
+      lng: 0
   });
   GMaps.geolocate({
   success: function(position) {
