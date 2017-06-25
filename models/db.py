@@ -144,8 +144,10 @@ db.define_table('aevent',
                 Field('adate', 'date', label = 'Date'),
                 Field('atype', 'string', label = 'Type'),
                 Field('description', 'string', label = 'Description'),
-                Field('lat','double', writable = False),
-                Field('lng','double', writable = False))
+                Field('lat','double', writable = False, readable = False),
+                Field('lng','double', writable = False, readable = False),
+               Field('address','string', label = "Address"))
+
 
 db.define_table('user_event',
                 Field('auser', 'reference auser'),
