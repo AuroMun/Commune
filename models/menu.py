@@ -30,7 +30,8 @@ response.google_analytics_id = None
 
 response.menu = [
     (T('Home'), False, URL('default', 'index'), []),
-    (T('Events Around You'), False, URL('default', 'Events_Around_you'), [])
+    (T('Events Around You'), False, URL('default', 'Events_Around_you'), []),
+    (T('Create Event'), False, URL('default', 'createEvent'), [])
 
 ]
 
