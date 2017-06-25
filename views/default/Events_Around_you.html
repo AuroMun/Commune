@@ -1,10 +1,22 @@
 {{extend 'layout.html'}}
-        {{block left_sidebar}}
-        <div id="left_sidebar">
-        <div style="padding: 4px;">
-                here content of sidebar left
+{{block left_sidebar}}
+<div id="left_sidebar">
+<div style="padding: 4px;">
+        <div id="map" style="height:400px;width:800px"></div>
+<script>
+$(document).ready(function(){
+  map = new GMaps({
+    div: '#map',
+    lat: {{=latitude}},
+    lng: {{=longitude}}
+  });
+});
+</script>
+    <script>
+        
+    </script>
         </div>
         </div><!-- left_sidebar -->
 {{end}}
 <h1> Events around you </h1>
-{{=BEAUTIFY(response._vars)}}
+{{=BEAUTIFY(things)}}
