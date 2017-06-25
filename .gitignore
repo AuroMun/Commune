@@ -79,4 +79,5 @@ pip-log.txt
 
 #Translations
 *.mo
-
+*.log
+*.bak
