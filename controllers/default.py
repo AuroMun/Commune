@@ -47,7 +47,8 @@ def user():
 
 def Events_Around_you():
     left_sidebar_enabled = True
-    things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL, db.sponsor.host_reward, db.sponsor.part_reward, db.sponsor.name)
+    things = crud.select(db.aevent)
+
     return locals()
 
 def aevent():
