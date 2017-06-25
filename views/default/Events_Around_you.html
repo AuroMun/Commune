@@ -29,18 +29,7 @@ $(document).ready(function(){
 });
 });
 </script>
-    {{ for thing in things:}}
-    <script>
-        map.addMarker({
-            'lat': {{=thing.lat}},
-            'lng': {{=thing.lng}},
-            'title': {{=think.name}}},
-            'infoWindow': {
-                content: '<p>{{=thing.name}}</p>'
-            }
-          });
-    </script>
-    {{pass}}
+
         </div>
         </div><!-- left_sidebar -->
 {{end}}
