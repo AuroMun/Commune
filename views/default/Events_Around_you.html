@@ -7,13 +7,24 @@
 $(document).ready(function(){
   map = new GMaps({
     div: '#map',
-    lat: {{=latitude}},
-    lng: {{=longitude}}
   });
+  GMaps.geolocate({
+  success: function(position) {
+    map.setCenter(position.coords.latitude, position.coords.longitude);
+  },
+  error: function(error) {
+    alert('Geolocation failed: '+error.message);
+  },
+  not_supported: function() {
+    alert("Your browser does not support geolocation");
+  },
+  always: function() {
+  }
+});
 });
 </script>
     <script>
-        
+
     </script>
         </div>
         </div><!-- left_sidebar -->
