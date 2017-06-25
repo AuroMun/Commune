@@ -134,6 +134,10 @@ db.define_table('sponsor',
                 Field('to_date', 'date'),
                 Field('atype', 'string'),
                 Field('description', 'string'))
+db.define_table('auser',
+                Field('name', 'string'),
+                Field('password', 'password'),
+                Field('alocation', 'string'))
 db.define_table('aevent',
                 Field('name', 'string', label = 'Event'),
                 Field('sponsor', 'reference sponsor', readable = False),

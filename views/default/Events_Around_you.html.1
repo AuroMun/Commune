@@ -20,30 +20,11 @@ Try it Yourself »
 </style>
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyC5zinZoOTO9onWdHZiU5dRAH7UzZoGcsI"></script>
 <script src="{{=URL('static','js/gmaps.js')}}"></script>
-
+{{block left_sidebar}}
 
 <div id="left_sidebar">
 <div style="padding: 4px;">
-
-
-<div class="row">
-        <div class="col-md-6">
-        <div id="map" style="height:400px;width:100%;"></div>
-        </div>
-        <div class="col-md-6">
-<h1> Events around you </h1>
-{{ for thing in stuff:}}
-<a href = {{ =URL('event', vars=dict(id=thing.id)) }} style="text-decoration: none;"> <div class="card12 container12" style="padding-top: 1%;">
-    <h3>{{ =thing.name }}</h3>
-    <h4>{{ =thing.atype }}</h4>
-    <br>
-    <p>{{=thing.description}}</p>
-    <p>
-        Location: {{=thing.lat}} {{=thing.lng}} <br> {{=thing.address}}
-    </p>
-    </div></a><br><br>
-{{pass}}</div>
-      </div>
+        <div id="map" style="height:400px;width:100%"></div>
 <script>
 $(document).ready(function(){
   map = new GMaps({
@@ -76,3 +57,14 @@ $(document).ready(function(){
 });
 });
 </script>
+
+        </div>
+        </div><!-- left_sidebar -->
+{{end}}
+<h1> Events around you </h1>
+{{ for thing in stuff:}}
+<div class="card12 container12" style="padding-top: 1%;">
+{{ =thing.name }}
+</div>
+{{ =URL('event', vars=dict(id=thing.id)) }}
+{{pass}}

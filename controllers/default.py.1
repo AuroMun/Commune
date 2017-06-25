@@ -27,7 +27,7 @@ def createEvent():
 
 @auth.requires_login()
 def going():
-    db.user_event.insert(auth_user=session.auth.user.id, aevent=request.vars.id, status="Joined")
+    db.user_event.insert(auser=session.auth.user.id, aevent=request.vars.id)
     response.flash = T('Successfully joined!')
     redirect(URL('Events_Around_you'))
 
@@ -37,10 +37,9 @@ def going():
 def event():
     event = db(db.aevent.id == request.vars.id).select()
     stuff = event
-    first = (db.user_event.auth_user == session.auth.user.id )
+    first = (db.user_event.auser == session.auth.user.id )
     second = (db.user_event.aevent == request.vars.id)
-    joined = len(db( first & second ).select()) > 0
-    count = len(db( second ).select())
+    joined = db( first & second ).length > 0
     return locals()
 
 def user():
