@@ -46,6 +46,7 @@ def user():
     return dict(form=auth())
 
 def Events_Around_you():
+    left_sidebar_enabled = True
     things = db( db.sponsor.id==db.aevent.sponsor).select(db.aevent.ALL, db.sponsor.host_reward, db.sponsor.part_reward, db.sponsor.name)
     return locals()
 
