@@ -9,7 +9,6 @@
 # -------------------------------------------------------------------------
 
 from gluon.contrib.user_agent_parser import mobilize
-@mobilize
 def index():
     from gluon.tools import geocode
     latitude = longtitude = ''

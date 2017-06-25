@@ -149,6 +149,8 @@ db.define_table('user_event',
                 Field('aevent', 'reference aevent'),
                 Field('status', 'string'),
                 Field('reward_link', 'string'))
+db.aevent.sponsor.widget = SQLFORM.widgets.autocomplete(
+     request, db.sponsor.name, limitby=(0,10), min_length=2)
 # -------------------------------------------------------------------------
 # after defining tables, uncomment below to enable auditing
 # -------------------------------------------------------------------------
