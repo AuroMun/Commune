@@ -139,11 +139,11 @@ db.define_table('auser',
                 Field('password', 'password'),
                 Field('alocation', 'string'))
 db.define_table('aevent',
-                Field('name', 'string'),
-                Field('sponsor', 'reference sponsor'),
-                Field('adate', 'date'),
-                Field('atype', 'string'),
-                Field('description', 'string'))
+                Field('name', 'string', label = 'Event'),
+                Field('sponsor', 'reference sponsor', readable = False),
+                Field('adate', 'date', label = 'Date'),
+                Field('atype', 'string', label = 'Type'),
+                Field('description', 'string'), label = 'Description')
 db.define_table('user_event',
                 Field('auser', 'reference auser'),
                 Field('aevent', 'reference aevent'),
