@@ -1,10 +1,10 @@
 {{extend 'layout.html'}}
         {{block left_sidebar}}
-        <div id="left_sidebar" {{=XML(left_sidebar_style)}} >
+        <div id="left_sidebar">
         <div style="padding: 4px;">
                 here content of sidebar left
         </div>
         </div><!-- left_sidebar -->
-{{end}} 
+{{end}}
 <h1> Events around you </h1>
 {{=BEAUTIFY(response._vars)}}
